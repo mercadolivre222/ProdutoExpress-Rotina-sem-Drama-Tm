@@ -161,7 +161,33 @@ footer a{color:#cbd5e1;text-decoration:underline}
 .sticky .btn{padding:14px 16px;font-size:16px}
 @media(max-width:560px){.problem-grid{grid-template-columns:1fr}.bonus-grid{gap:12px}.bonus-card{padding:16px 10px}.bonus-card:last-child{max-width:calc(50% - 6px)}.f3,.f4{display:none}}
 @media(min-width:900px){.sticky{display:none}footer{padding-bottom:30px}}
-</style>
+
+.planos-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px;margin:22px auto 0;align-items:start}
+.plano.basic{border:2px solid var(--border);box-shadow:var(--shadow);margin:0;max-width:none}
+.plano.full{margin:0;max-width:none}
+.plano.basic h3{color:var(--text)}
+.plano .preco-sm{font-family:'Nunito',sans-serif;font-weight:900;font-size:36px;line-height:1.1}
+.plano.basic .btn{margin-top:14px}
+.btn-block{display:block;width:100%;border:0;cursor:pointer}
+#pop-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.65);backdrop-filter:blur(4px);z-index:5000;align-items:center;justify-content:center;padding:18px}
+#pop-overlay.show{display:flex}
+.pop-box{background:#fff;border-radius:var(--r-xl);padding:20px 18px;max-width:400px;width:100%;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.25);max-height:92vh;overflow-y:auto;animation:popIn .28s ease}
+@keyframes popIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.pop-x{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;border:0;background:#f1f5f9;color:#475569;font-size:18px;cursor:pointer}
+.pop-top{background:linear-gradient(90deg,#d356c9,#8f6bff);color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;text-align:center;border-radius:12px;padding:12px 40px 12px 14px;margin-bottom:12px}
+.pop-tag{display:inline-block;background:#dcfce7;color:#166534;font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;padding:6px 14px;border-radius:50px;margin-bottom:10px}
+.pop-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:17px;line-height:1.35;margin-bottom:10px}
+.pop-title span{color:var(--red)}
+.pop-sub{font-size:13px;color:var(--gray)}
+.pop-old{font-size:13px;color:#9ca3af;text-decoration:line-through}
+.pop-price{font-family:'Nunito',sans-serif;font-weight:900;font-size:38px;color:var(--green-d);line-height:1.1;margin-bottom:12px}
+.pop-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.pop-list li{display:flex;gap:10px;align-items:center;background:#f8fafc;border:1px solid var(--border);border-radius:12px;padding:10px 12px;font-size:13px}
+.pop-warn{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:10px 12px;font-size:12.5px;font-weight:700;margin-bottom:14px}
+.pop-box .btn{display:block;max-width:none;font-size:16px;padding:16px 14px}
+.pop-skip{display:block;text-align:center;margin-top:14px;font-size:13px;color:var(--gray);text-decoration:underline}
+@media(max-width:700px){.planos-grid{grid-template-columns:1fr}}
+.pop-top.red{background:#dc2626}.pop-warn.red{background:#fff5f5;border-color:#fecaca;color:#b91c1c}.pop-save{display:inline-block;background:#dcfce7;color:#166534;font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;padding:4px 12px;border-radius:50px;margin:-6px 0 12px}</style>
 </head>
 <body>
 
@@ -280,31 +306,67 @@ footer a{color:#cbd5e1;text-decoration:underline}
 <section id="planos">
   <div class="container center">
     <span class="pill p4">🎁 OFERTA ESPECIAL</span>
-    <h2 class="h2">Seu kit completo <span class="c-green">por um preço só</span></h2>
-    <div class="banner">💜 PAGAMENTO ÚNICO DE R$37, SEM MENSALIDADE</div>
-    <div class="plano" style="text-align:left">
-      <span class="plano-badge">⭐ KIT COMPLETO COM 3 BÔNUS</span>
-      <h3>KIT ROTINA SEM DRAMA</h3>
-      <p class="desc">O quadro de rotina semanal completo, mais os 3 bônus para organizar a casa inteira.</p>
-      <div class="de">De R$208,00</div>
-      <div class="preco">R$37,00</div>
-      <span class="cupom">🏷 Pagamento único</span>
-      <a class="btn yellow checkout-button" href="https://pay.kiwify.com.br/alGqk2U">QUERO GARANTIR MEU KIT</a>
-      <hr>
-      <ul class="feat-list">
-        <li><span class="feat-check">✓</span><span>Quadro de Rotina Semanal Completo <b>(R$97)</b></span><span class="feat-sub">Manhã, tarde e noite • 7 dias • menino e menina • A3 e A4</span></li>
-        <li><span class="feat-check">✓</span><span>Bônus 1: Planner da Mãe Organizada <b>(R$47)</b></span></li>
-        <li><span class="feat-check">✓</span><span>Bônus 2: Caderno de Atividades <b>(R$37)</b></span><span class="feat-sub">15 atividades lúdicas para crianças de 3 a 8 anos</span></li>
-        <li><span class="feat-check">✓</span><span>Bônus 3: Quadro de Regras da Casa <b>(R$27)</b></span></li>
-        <li><span class="feat-check">✓</span><span>Acesso imediato por e-mail</span></li>
-        <li><span class="feat-check">✓</span><span>Garantia de 7 dias</span></li>
-      </ul>
-      <hr>
-      <a class="btn yellow checkout-button" href="https://pay.kiwify.com.br/alGqk2U">COMPRAR AGORA</a>
-      <span class="note" style="text-align:center">Isso é menos que uma pizza!</span>
+    <h2 class="h2">Escolha o seu <span class="c-green">plano</span></h2>
+    <div class="banner">💜 PAGAMENTO ÚNICO, SEM MENSALIDADE, COM GARANTIA DE 7 DIAS</div>
+    <div class="planos-grid">
+      <div class="plano basic" style="text-align:left">
+        <h3>PLANO SIMPLES</h3>
+        <p class="desc">Para começar a organizar a rotina hoje.</p>
+        <div class="preco-sm">R$19,90</div>
+        <hr>
+        <ul class="feat-list">
+          <li><span class="feat-check">✓</span><span>Quadro de Rotina Semanal Completo</span><span class="feat-sub">Manhã, tarde e noite • 7 dias</span></li>
+          <li><span class="feat-check">✓</span><span>Versão menino e versão menina</span></li>
+          <li><span class="feat-check">✓</span><span>Formato A3 e A4 para imprimir</span></li>
+          <li><span class="feat-check">✓</span><span>Acesso imediato por e-mail</span></li>
+          <li><span class="feat-check">✓</span><span>Garantia de 7 dias</span></li>
+        </ul>
+        <button type="button" class="btn btn-block" id="btnBasico">COMPRAR AGORA</button>
+      </div>
+      <div class="plano full" style="text-align:left">
+        <span class="plano-badge">⭐ MAIS ESCOLHIDO</span>
+        <h3>KIT COMPLETO</h3>
+        <p class="desc">O quadro de rotina completo, mais os 3 bônus para organizar a casa inteira.</p>
+        <div class="de">De R$208,00</div>
+        <div class="preco-sm">R$37,00</div>
+        <span class="cupom">🏷 Pagamento único</span>
+        <a class="btn yellow checkout-button btn-block" href="https://pay.kiwify.com.br/alGqk2U">QUERO O KIT COMPLETO</a>
+        <hr>
+        <ul class="feat-list">
+          <li><span class="feat-check">✓</span><span>Quadro de Rotina Semanal Completo <b>(R$97)</b></span><span class="feat-sub">Manhã, tarde e noite • 7 dias • menino e menina • A3 e A4</span></li>
+          <li><span class="feat-check">✓</span><span>Bônus 1: Planner da Mãe Organizada <b>(R$47)</b></span></li>
+          <li><span class="feat-check">✓</span><span>Bônus 2: Caderno de Atividades <b>(R$37)</b></span><span class="feat-sub">15 atividades lúdicas para crianças de 3 a 8 anos</span></li>
+          <li><span class="feat-check">✓</span><span>Bônus 3: Quadro de Regras da Casa <b>(R$27)</b></span></li>
+          <li><span class="feat-check">✓</span><span>Acesso imediato por e-mail</span></li>
+          <li><span class="feat-check">✓</span><span>Garantia de 7 dias</span></li>
+        </ul>
+        <a class="btn yellow checkout-button btn-block" href="https://pay.kiwify.com.br/alGqk2U">COMPRAR AGORA</a>
+        <span class="note" style="text-align:center">Isso é menos que uma pizza!</span>
+      </div>
     </div>
   </div>
 </section>
+
+<div id="pop-overlay" aria-hidden="true">
+  <div class="pop-box" role="dialog" aria-modal="true">
+    <button type="button" class="pop-x" id="popX" aria-label="Fechar">✕</button>
+    <div class="pop-top red">⚡ ESSA OFERTA DESAPARECE AO FECHAR ESTA JANELA</div>
+    <span class="pop-tag">🎁 OFERTA ÚNICA, SÓ AGORA</span>
+    <div class="pop-title">Você está prestes a levar o simples <span>SEM os 3 bônus</span>: Planner da Mãe Organizada, Caderno de Atividades e Quadro de Regras da Casa.</div>
+    <div class="pop-sub">Leve o Kit Completo por apenas</div>
+    <div class="pop-old">De R$37,00</div>
+    <div class="pop-price">R$24,90</div><div class="pop-save">Você economiza R$12,10</div>
+    <ul class="pop-list">
+      <li>📋 Quadro de Rotina Semanal Completo (manhã, tarde e noite)</li>
+      <li>📒 Bônus 1: Planner da Mãe Organizada</li>
+      <li>✏️ Bônus 2: Caderno de Atividades com 15 atividades</li>
+      <li>🏠 Bônus 3: Quadro de Regras da Casa</li>
+    </ul>
+    <div class="pop-warn red">⚠️ Essa oferta some ao fechar esta janela. Você não verá este desconto de novo.</div>
+    <a class="btn checkout-button" data-value="24.9" href="https://pay.kiwify.com.br/aF6ULhe">SIM! QUERO O COMPLETO POR R$24,90 ✅</a>
+    <a class="pop-skip checkout-button" data-value="19.9" href="https://pay.kiwify.com.br/8GhTkeB">Não, prefiro continuar com o simples por R$19,90</a>
+  </div>
+</div>
 
 <section id="depoimentos">
   <div class="container center">
@@ -381,7 +443,7 @@ footer a{color:#cbd5e1;text-decoration:underline}
     if(qs){var base=a.getAttribute('href');a.setAttribute('href',base+(base.indexOf('?')>-1?'&':'?')+qs.replace('?',''));}
     a.removeAttribute('target');
     a.addEventListener('click',function(){
-      if(window.fbq){fbq('track','InitiateCheckout',{value:37,currency:'BRL',content_name:'Rotina Sem Drama'});}
+      if(window.fbq){fbq('track','InitiateCheckout',{value:parseFloat(a.getAttribute('data-value')||'37'),currency:'BRL',content_name:'Rotina Sem Drama'});}
     });
   });
   var bar=document.getElementById('sticky');
@@ -395,6 +457,19 @@ footer a{color:#cbd5e1;text-decoration:underline}
     var h=document.documentElement;
     if((h.scrollTop+window.innerHeight)/h.scrollHeight>=0.5){fired=true;if(window.fbq)fbq('trackCustom','Scroll50');}
   },{passive:true});
+  /* POPUP */
+  var ov=document.getElementById('pop-overlay');
+  function openPop(){ov.classList.add('show');ov.setAttribute('aria-hidden','false');if(window.fbq)fbq('trackCustom','AbriuPopupUpgrade');}
+  function closePop(){ov.classList.remove('show');ov.setAttribute('aria-hidden','true');}
+  var seen=false;try{seen=localStorage.getItem('rsd_pop')==='1';}catch(e){}
+  document.getElementById('btnBasico').addEventListener('click',function(){
+    if(seen){if(window.fbq)fbq('track','InitiateCheckout',{value:19.9,currency:'BRL',content_name:'Rotina Sem Drama Simples'});window.location.href=document.querySelector('.pop-skip').href;return;}
+    seen=true;try{localStorage.setItem('rsd_pop','1');}catch(e){}
+    openPop();
+  });
+  document.getElementById('popX').addEventListener('click',closePop);
+  ov.addEventListener('click',function(e){if(e.target===ov)closePop();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closePop();});
   /* FAQ */
   document.querySelectorAll('.faq-q').forEach(function(b){
     b.addEventListener('click',function(){
