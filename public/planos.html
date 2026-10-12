@@ -187,7 +187,7 @@ footer a{color:#cbd5e1;text-decoration:underline}
 .pop-box .btn{display:block;max-width:none;font-size:16px;padding:16px 14px}
 .pop-skip{display:block;text-align:center;margin-top:14px;font-size:13px;color:var(--gray);text-decoration:underline}
 @media(max-width:700px){.planos-grid{grid-template-columns:1fr}}
-</style>
+.pop-top.red{background:#dc2626}.pop-warn.red{background:#fff5f5;border-color:#fecaca;color:#b91c1c}.pop-save{display:inline-block;background:#dcfce7;color:#166534;font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;padding:4px 12px;border-radius:50px;margin:-6px 0 12px}</style>
 </head>
 <body>
 
@@ -350,20 +350,20 @@ footer a{color:#cbd5e1;text-decoration:underline}
 <div id="pop-overlay" aria-hidden="true">
   <div class="pop-box" role="dialog" aria-modal="true">
     <button type="button" class="pop-x" id="popX" aria-label="Fechar">✕</button>
-    <div class="pop-top">🎁 ANTES DE CONTINUAR, VEJA ISTO</div>
-    <span class="pop-tag">🎁 DESCONTO EXCLUSIVO</span>
+    <div class="pop-top red">⚡ ESSA OFERTA DESAPARECE AO FECHAR ESTA JANELA</div>
+    <span class="pop-tag">🎁 OFERTA ÚNICA, SÓ AGORA</span>
     <div class="pop-title">Você está prestes a levar o simples <span>SEM os 3 bônus</span>: Planner da Mãe Organizada, Caderno de Atividades e Quadro de Regras da Casa.</div>
-    <div class="pop-sub">Leve o Kit Completo com desconto por apenas</div>
+    <div class="pop-sub">Leve o Kit Completo por apenas</div>
     <div class="pop-old">De R$37,00</div>
-    <div class="pop-price">R$25,00</div>
+    <div class="pop-price">R$24,90</div><div class="pop-save">Você economiza R$12,10</div>
     <ul class="pop-list">
       <li>📋 Quadro de Rotina Semanal Completo (manhã, tarde e noite)</li>
       <li>📒 Bônus 1: Planner da Mãe Organizada</li>
       <li>✏️ Bônus 2: Caderno de Atividades com 15 atividades</li>
       <li>🏠 Bônus 3: Quadro de Regras da Casa</li>
     </ul>
-    <div class="pop-warn">💡 Desconto de R$12 para quem leva o kit completo. Pagamento único, acesso imediato e garantia de 7 dias.</div>
-    <a class="btn checkout-button" data-value="25" href="https://pay.kiwify.com.br/aF6ULhe">SIM! QUERO O KIT COMPLETO POR R$25 ✅</a>
+    <div class="pop-warn red">⚠️ Essa oferta some ao fechar esta janela. Você não verá este desconto de novo.</div>
+    <a class="btn checkout-button" data-value="24.9" href="https://pay.kiwify.com.br/aF6ULhe">SIM! QUERO O COMPLETO POR R$24,90 ✅</a>
     <a class="pop-skip checkout-button" data-value="19.9" href="https://pay.kiwify.com.br/8GhTkeB">Não, prefiro continuar com o simples por R$19,90</a>
   </div>
 </div>
@@ -461,7 +461,12 @@ footer a{color:#cbd5e1;text-decoration:underline}
   var ov=document.getElementById('pop-overlay');
   function openPop(){ov.classList.add('show');ov.setAttribute('aria-hidden','false');if(window.fbq)fbq('trackCustom','AbriuPopupUpgrade');}
   function closePop(){ov.classList.remove('show');ov.setAttribute('aria-hidden','true');}
-  document.getElementById('btnBasico').addEventListener('click',openPop);
+  var seen=false;try{seen=localStorage.getItem('rsd_pop')==='1';}catch(e){}
+  document.getElementById('btnBasico').addEventListener('click',function(){
+    if(seen){if(window.fbq)fbq('track','InitiateCheckout',{value:19.9,currency:'BRL',content_name:'Rotina Sem Drama Simples'});window.location.href=document.querySelector('.pop-skip').href;return;}
+    seen=true;try{localStorage.setItem('rsd_pop','1');}catch(e){}
+    openPop();
+  });
   document.getElementById('popX').addEventListener('click',closePop);
   ov.addEventListener('click',function(e){if(e.target===ov)closePop();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closePop();});
