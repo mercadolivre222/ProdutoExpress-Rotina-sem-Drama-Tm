@@ -351,20 +351,20 @@ footer a{color:#cbd5e1;text-decoration:underline}
   <div class="pop-box" role="dialog" aria-modal="true">
     <button type="button" class="pop-x" id="popX" aria-label="Fechar">✕</button>
     <div class="pop-top">🎁 ANTES DE CONTINUAR, VEJA ISTO</div>
-    <span class="pop-tag">🎁 OFERTA DO KIT COMPLETO</span>
+    <span class="pop-tag">🎁 DESCONTO EXCLUSIVO</span>
     <div class="pop-title">Você está prestes a levar o simples <span>SEM os 3 bônus</span>: Planner da Mãe Organizada, Caderno de Atividades e Quadro de Regras da Casa.</div>
-    <div class="pop-sub">Leve o Kit Completo por apenas</div>
-    <div class="pop-old">De R$208,00</div>
-    <div class="pop-price">R$37,00</div>
+    <div class="pop-sub">Leve o Kit Completo com desconto por apenas</div>
+    <div class="pop-old">De R$37,00</div>
+    <div class="pop-price">R$25,00</div>
     <ul class="pop-list">
       <li>📋 Quadro de Rotina Semanal Completo (manhã, tarde e noite)</li>
       <li>📒 Bônus 1: Planner da Mãe Organizada</li>
       <li>✏️ Bônus 2: Caderno de Atividades com 15 atividades</li>
       <li>🏠 Bônus 3: Quadro de Regras da Casa</li>
     </ul>
-    <div class="pop-warn">💡 Pagamento único, acesso imediato e garantia de 7 dias.</div>
-    <a class="btn checkout-button" href="https://pay.kiwify.com.br/alGqk2U">SIM! QUERO O KIT COMPLETO POR R$37 ✅</a>
-    <a class="pop-skip checkout-button" href="https://pay.kiwify.com.br/8GhTkeB">Não, prefiro continuar com o simples por R$19,90</a>
+    <div class="pop-warn">💡 Desconto de R$12 para quem leva o kit completo. Pagamento único, acesso imediato e garantia de 7 dias.</div>
+    <a class="btn checkout-button" data-value="25" href="https://pay.kiwify.com.br/aF6ULhe">SIM! QUERO O KIT COMPLETO POR R$25 ✅</a>
+    <a class="pop-skip checkout-button" data-value="19.9" href="https://pay.kiwify.com.br/8GhTkeB">Não, prefiro continuar com o simples por R$19,90</a>
   </div>
 </div>
 
@@ -443,7 +443,7 @@ footer a{color:#cbd5e1;text-decoration:underline}
     if(qs){var base=a.getAttribute('href');a.setAttribute('href',base+(base.indexOf('?')>-1?'&':'?')+qs.replace('?',''));}
     a.removeAttribute('target');
     a.addEventListener('click',function(){
-      if(window.fbq){fbq('track','InitiateCheckout',{value:37,currency:'BRL',content_name:'Rotina Sem Drama'});}
+      if(window.fbq){fbq('track','InitiateCheckout',{value:parseFloat(a.getAttribute('data-value')||'37'),currency:'BRL',content_name:'Rotina Sem Drama'});}
     });
   });
   var bar=document.getElementById('sticky');
